@@ -205,9 +205,54 @@ const Predictions = () => {
                   </div>
                   <div className="row">
                     <div className="col-12">
-                      <h5>Prediction Details</h5>
-                      <pre className="bg-light p-3 rounded shadow-sm">
-                        {JSON.stringify(prediction.prediction, null, 2)}
+                      <pre className="bg-light p-4 rounded shadow-sm">
+                        <div className="card mb-3">
+                          <div className="card-header bg-primary text-white">
+                            <h5 className="mb-0">Prediction Details</h5>
+                          </div>
+                          <div className="card-body">
+                            <div className="row">
+                              <div className="col-md-12">
+                                <strong>Prediction:</strong>
+                                <p className="text-dark bg-light p-2 rounded shadow-sm">
+                                  {JSON.stringify(prediction.prediction, null, 2)}
+                                </p>
+                              </div>
+                            </div>
+
+                            <hr />
+
+                            <div className="row">
+                              <div className="col-md-6">
+                                <strong>Time:</strong>
+                                <p className="text-secondary bg-light p-2 rounded shadow-sm">
+                                  {JSON.stringify(prediction.metadata.Time, null, 2)}
+                                </p>
+                              </div>
+                              <div className="col-md-6">
+                                <strong>Place:</strong>
+                                <p className="text-secondary bg-light p-2 rounded shadow-sm">
+                                  {JSON.stringify(prediction.metadata.Place, null, 2)}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="row">
+                              <div className="col-md-6">
+                                <strong>Latitude:</strong>
+                                <p className="text-success bg-light p-2 rounded shadow-sm">
+                                  {JSON.stringify(prediction.metadata.Latitude, null, 2)}
+                                </p>
+                              </div>
+                              <div className="col-md-6">
+                                <strong>Longitude:</strong>
+                                <p className="text-success bg-light p-2 rounded shadow-sm">
+                                  {JSON.stringify(prediction.metadata.Longitude, null, 2)}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </pre>
                     </div>
                   </div>
