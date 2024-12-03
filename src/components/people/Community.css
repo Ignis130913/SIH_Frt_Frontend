@@ -1,0 +1,133 @@
+:root {
+    --local-primary-color: #2c3e50;
+    --local-secondary-color: #3498db;
+    --local-accent-color: #27ae60;
+    --local-text-color: #333;
+    --local-background-color: #f4f6f7;
+    --local-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.community-container * {
+    all: unset;
+    box-sizing: border-box;
+}
+
+.community-container {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--local-background-color);
+    color: var(--local-text-color);
+    line-height: 1.6;
+    width: 100%;
+}
+
+.community-container .display-5 {
+    letter-spacing: -1px;
+    font-weight: 700;
+    color: var(--local-primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.community-container .nav-pills .nav-link {
+    transition: all 0.3s ease;
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--local-secondary-color);
+    margin: 0 0.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.community-container .nav-pills .nav-link.active {
+    background-color: var(--local-secondary-color);
+    color: white;
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+}
+
+.community-container .nav-pills .nav-link:hover {
+    background-color: rgba(52, 152, 219, 0.2);
+}
+
+.community-container .card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--local-card-shadow);
+}
+
+.community-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.community-container .card-header {
+    background-color: #000;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.community-container .btn-primary {
+    background-color: var(--local-secondary-color);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.community-container .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.community-container .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--local-accent-color);
+    transition: background-color 0.2s ease;
+}
+
+.community-container .list-group-item:hover {
+    background-color: rgba(39, 174, 96, 0.05);
+}
+
+@media (max-width: 768px) {
+    .community-container .nav-pills {
+        flex-direction: column;
+    }
+
+    .community-container .nav-pills .nav-link {
+        margin: 0.25rem 0;
+        text-align: center;
+    }
+}
+
+.card-header {
+    background-color: #000000;  /* Black background */
+    color: white;
+  }
+  
+  /* Specific adjustments for different tab headers */
+  .card-header.bg-primary {
+    background: #000 !important;  /* Ensure black background */
+  }
+  
+  .card-header.bg-success {
+    background: #000 !important;  /* Black background for success headers too */
+  }
+  
+  /* Ensure headings remain readable */
+  .card-header h4, 
+  .card-header h5 {
+    color: white;
+    margin-bottom: 0;
+  }

@@ -27,6 +27,7 @@ const Welcome = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="display-3 mb-4 font-weight-bold"
+          style={{ color: 'white' }}
         >
           Surveillance Security FRT System
         </motion.h1>
@@ -35,6 +36,7 @@ const Welcome = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
           className="lead mb-5"
+          style={{ color: 'white' }}
         >
           Advanced AI / Blockchain Powered Face Recognition & Threat Detection
         </motion.p>

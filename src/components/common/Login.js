@@ -8,7 +8,8 @@ import Preloader from './Preloader';
 
 const POLICE_CREDENTIALS = [
   { username: 'admin', password: 'police123' },
-  { username: 'officer', password: 'secure456' }
+  { username: 'officer', password: 'secure456' },
+  { username: 'Sreeram AM', password: 'fullstack' }
 ];
 
 const Login = () => {
@@ -93,7 +94,7 @@ const Login = () => {
       >
         <div className="card-header text-center">
           <ShieldCheck size={48} className="mx-auto mb-2" />
-          <h2>Secure Access Control</h2>
+          <h2 style={{ color: 'white' }}>Secure Access Control</h2>
         </div>
         <div className="card-body">
           {!userType && (
