@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Lock, ShieldCheck, Database, Eye, Globe, UserCheck } from 'lucide-react';
 
 const Privacy = () => {
@@ -52,62 +51,80 @@ const Privacy = () => {
   ];
 
   return (
-    <div className="container py-5">
-      <div className="row">
-        <div className="col-lg-12">
-          <h2 className="text-center mb-5">Privacy & Data Protection Framework</h2>
-          
-          <div className="row g-4 mb-5">
-            {privacyFeatures.map((feature, index) => (
-              <div key={index} className="col-md-4">
-                <div className="card h-100 shadow-sm border-0">
-                  <div className="card-body text-center">
-                    <feature.icon size={48} className="mb-3 text-primary" />
-                    <h4 className="card-title mb-3">{feature.title}</h4>
-                    <p className="text-muted">{feature.description}</p>
-                    <small className="text-secondary">{feature.details}</small>
-                  </div>
+    <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-10">
+          Privacy & Data Protection Framework
+        </h2>
+        
+        {/* Privacy Features Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {privacyFeatures.map((feature, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out p-6"
+            >
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <feature.icon 
+                    size={48} 
+                    className="text-blue-600 bg-blue-100 rounded-full p-3"
+                  />
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="row">
-            <div className="col-lg-6">
-              <div className="card shadow-sm h-100">
-                <div className="card-body">
-                  <h4 className="card-title mb-4">Societal Impact of Responsible Surveillance</h4>
-                  <ul className="list-group list-group-flush">
-                    {societalBenefits.map((benefit, index) => (
-                      <li key={index} className="list-group-item d-flex align-items-center">
-                        <ShieldCheck size={20} className="me-2 text-success" />
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <h4 className="text-xl font-semibold text-gray-800 mb-3">
+                  {feature.title}
+                </h4>
+                <p className="text-gray-600 mb-3">
+                  {feature.description}
+                </p>
+                <small className="text-gray-500 text-sm">
+                  {feature.details}
+                </small>
               </div>
             </div>
-            <div className="col-lg-6">
-              <div className="card shadow-sm h-100">
-                <div className="card-body">
-                  <h4 className="card-title mb-4">Our Ethical Commitment</h4>
-                  <p className="text-muted">
-                    SafeGuard Intelligence Platform is dedicated to balancing technological innovation 
-                    with stringent privacy protections. Our mission is to enhance public safety through 
-                    responsible, transparent, and ethical use of advanced surveillance technologies.
-                  </p>
-                  <div className="alert alert-info mt-3" role="alert">
-                    <strong>Key Principles:</strong>
-                    <ul className="mt-2">
-                      <li>Transparency in Data Usage</li>
-                      <li>Minimal Intrusion</li>
-                      <li>Continuous Ethical Assessment</li>
-                      <li>Individual Rights Preservation</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          ))}
+        </div>
+
+        {/* Additional Information Sections */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h4 className="text-2xl font-bold text-gray-900 mb-6">
+              Societal Impact of Responsible Surveillance
+            </h4>
+            <ul className="space-y-3">
+              {societalBenefits.map((benefit, index) => (
+                <li 
+                  key={index} 
+                  className="flex items-center text-gray-700"
+                >
+                  <ShieldCheck 
+                    size={20} 
+                    className="mr-3 text-green-500 flex-shrink-0"
+                  />
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h4 className="text-2xl font-bold text-gray-900 mb-6">
+              Our Ethical Commitment
+            </h4>
+            <p className="text-gray-600 mb-4">
+              SafeGuard Intelligence Platform is dedicated to balancing technological 
+              innovation with stringent privacy protections. Our mission is to enhance 
+              public safety through responsible, transparent, and ethical use of 
+              advanced surveillance technologies.
+            </p>
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+              <strong className="text-blue-800 block mb-2">Key Principles:</strong>
+              <ul className="list-disc list-inside text-blue-700 space-y-1">
+                <li>Transparency in Data Usage</li>
+                <li>Minimal Intrusion</li>
+                <li>Continuous Ethical Assessment</li>
+                <li>Individual Rights Preservation</li>
+              </ul>
             </div>
           </div>
         </div>

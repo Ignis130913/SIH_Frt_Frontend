@@ -11,7 +11,9 @@ import {
   Info, 
   LogOut,
   X,
-  Menu 
+  Menu,
+  Trash2,  // Import Trash2 icon for deletion
+  Database  // Import Database icon for criminals database
 } from 'lucide-react';
 import Predictions from './Predictions';
 import UploadComponent from './UploadComponent';
@@ -22,6 +24,8 @@ import AboutUs from '../common/AboutUs';
 import Abnormal from '../common/Abnormal';
 import Preloader from '../common/Preloader'
 import './MainPagePolice.css';
+import Criminals from './Criminals';
+import Deletion from './Deletion';
 
 const MainPagePolice = ({ onLogout }) => {
   const [selectedComponent, setSelectedComponent] = useState('predictions');
@@ -46,6 +50,10 @@ const MainPagePolice = ({ onLogout }) => {
         return <Predictions />;
       case 'upload':
         return <UploadComponent />;
+      case 'delete':
+        return <Deletion />;
+      case 'criminals':
+        return <Criminals />;
       case 'status':
         return <ServerStatus />;
       case 'abnormal':
@@ -115,6 +123,20 @@ const MainPagePolice = ({ onLogout }) => {
               text="Upload Person"
               active={selectedComponent === 'upload'}
               onClick={() => setSelectedComponent('upload')}
+              isOpen={isSidebarOpen}
+            />
+            <SidebarItem
+              icon={<Trash2 size={20} />}  // Changed icon to Trash2
+              text="Delete Person"
+              active={selectedComponent === 'delete'}
+              onClick={() => setSelectedComponent('delete')}
+              isOpen={isSidebarOpen}
+            />
+            <SidebarItem
+              icon={<Database size={20} />}  // Changed icon to Database
+              text="Criminals Database"
+              active={selectedComponent === 'criminals'}
+              onClick={() => setSelectedComponent('criminals')}
               isOpen={isSidebarOpen}
             />
             <SidebarItem

@@ -64,7 +64,7 @@ const Intro = () => {
         <div className="row">
           <div className="col-12">
             {/* Header Section */}
-            <div className="text-center mb-5 p-4 bg-white rounded shadow-lg">
+            <div className="text-center mb-5 p-4 bg-white rounded shadow-lg animate-fade-in-up">
               <h1 className="display-4 text-primary mb-3">
                 <ShieldCheck size={54} className="me-3 text-primary" />
                 SafeGuard Intelligence Platform
@@ -94,7 +94,7 @@ const Intro = () => {
                 }
               ].map(({ icon: Icon, title, description }, index) => (
                 <div key={index} className="col-md-4">
-                  <div className="card h-100 border-0 shadow-sm">
+                  <div className={`card h-100 border-0 shadow-sm card-hover-effect ${index % 2 === 0 ? 'animate-fade-in-up' : ''}`}>
                     <div className="card-body text-center">
                       <Icon size={48} className={`mb-3 text-${['primary', 'success', 'warning'][index]}`} />
                       <h3 className="card-title mb-3">{title}</h3>

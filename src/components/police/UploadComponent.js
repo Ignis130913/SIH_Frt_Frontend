@@ -5,6 +5,7 @@ import CustomCard from '../common/CustomCard';
 const UploadComponent = () => {
     const [file, setFile] = useState(null);
     const [name, setName] = useState('');
+    const [reason, setReason] = useState('');
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const [variant, setVariant] = useState('');
@@ -12,8 +13,8 @@ const UploadComponent = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      if (!file || !name) {
-        setMessage('Please provide both image and name');
+      if (!file || !name || !reason) {
+        setMessage('Please provide image, name, and reason');
         setVariant('danger');
         return;
       }
@@ -21,6 +22,7 @@ const UploadComponent = () => {
       const formData = new FormData();
       formData.append('image', file);
       formData.append('name', name);
+      formData.append('reason', reason);
   
       setLoading(true);
       try {
@@ -35,6 +37,7 @@ const UploadComponent = () => {
           setVariant('success');
           setFile(null);
           setName('');
+          setReason('');
         } else {
           setMessage(data.error || 'Error uploading file');
           setVariant('danger');
@@ -73,6 +76,20 @@ const UploadComponent = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter name for the image"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                />
+              </div>
+
+              {/* Reason Input */}
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Reason
+                </label>
+                <input
+                  type="text"
+                  value={reason}
+                  onChange={(e) => setReason(e.target.value)}
+                  placeholder="Enter reason for upload"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                 />
               </div>
