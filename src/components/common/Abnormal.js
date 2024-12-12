@@ -15,7 +15,7 @@ const Abnormal = () => {
 
   const startMonitoring = async () => {
     try {
-      await axios.post('http://localhost:5000/start_abnormal_results', {
+      await axios.post('http://34.192.156.219:5000/start_abnormal_results', {
         base_path: '/path/to/your/base/folder'
       });
       setIsMonitoring(true);
@@ -28,7 +28,7 @@ const Abnormal = () => {
 
   const stopMonitoring = async () => {
     try {
-      await axios.post('http://localhost:5000/end_abnormal_results');
+      await axios.post('http://34.192.156.219:5000/end_abnormal_results');
       setIsMonitoring(false);
       setResults([]);
       setError(null);
@@ -40,7 +40,7 @@ const Abnormal = () => {
 
   const fetchResults = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/abnormal_results');
+      const response = await axios.get('http://34.192.156.219:5000/abnormal_results');
       setResults(response.data);
     } catch (error) {
       console.error('Error fetching results:', error);

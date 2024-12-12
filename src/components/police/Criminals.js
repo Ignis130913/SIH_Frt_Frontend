@@ -16,7 +16,7 @@ const Criminals = () => {
   useEffect(() => {
     const fetchCriminals = async () => {
       try {
-        const response = await fetch('http://localhost:5000/criminals');
+        const response = await fetch('http://34.192.156.219:5000/criminals');
         if (!response.ok) {
           throw new Error('Failed to fetch criminals');
         }

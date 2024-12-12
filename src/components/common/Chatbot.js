@@ -35,7 +35,7 @@ function Chatbot() {
     setMessages(newMessages);
     setMessage('');
     try {
-      const res = await axios.post('http://localhost:5000/chat', { message });
+      const res = await axios.post('http://34.192.156.219:5000/chat', { message });
       setMessages(prevMessages => [...prevMessages, { 
         text: res.data.data, 
         type: 'received',

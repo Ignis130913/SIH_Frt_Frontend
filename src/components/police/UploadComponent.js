@@ -26,7 +26,7 @@ const UploadComponent = () => {
   
       setLoading(true);
       try {
-        const response = await fetch('http://127.0.0.1:5000/save_train_data', {
+        const response = await fetch('http://34.192.156.219:5000/save_train_data', {
           method: 'POST',
           body: formData,
         });

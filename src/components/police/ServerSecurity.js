@@ -16,7 +16,7 @@ const ServerSecurity = () => {
     const fetchSecurityMetrics = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('http://127.0.0.1:5000/get_security_status');
+        const response = await fetch('http://34.192.156.219:5000/get_security_status');
         
         if (!response.ok) {
           throw new Error('Failed to fetch security metrics');

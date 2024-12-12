@@ -79,7 +79,7 @@ const Predictions = () => {
 
   const startPredictions = async () => {
     try {
-      await fetch('http://127.0.0.1:5000/start_predictions', { method: 'POST' });
+      await fetch('http://34.192.156.219:5000/start_predictions', { method: 'POST' });
       setIsStreaming(true);
     } catch (error) {
       console.error('Failed to start predictions:', error);
@@ -88,7 +88,7 @@ const Predictions = () => {
 
   const stopPredictions = async () => {
     try {
-      await fetch('http://127.0.0.1:5000/stop_predictions', { method: 'POST' });
+      await fetch('http://34.192.156.219:5000/stop_predictions', { method: 'POST' });
       setIsStreaming(false);
     } catch (error) {
       console.error('Failed to stop predictions:', error);
@@ -97,7 +97,7 @@ const Predictions = () => {
 
   useEffect(() => {
     if (isStreaming) {
-      const eventSource = new EventSource('http://127.0.0.1:5000/predict');
+      const eventSource = new EventSource('http://34.192.156.219:5000/predict');
 
       eventSource.onmessage = (event) => {
         if (event.data) {

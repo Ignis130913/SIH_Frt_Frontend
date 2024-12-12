@@ -48,7 +48,7 @@ const ServerStatus = () => {
     const fetchServerStatus = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://127.0.0.1:5000/get_server_status');
+        const response = await fetch('http://34.192.156.219:5000/get_server_status');
         const data = await response.json();
 
         if (data.status === 'success') {
