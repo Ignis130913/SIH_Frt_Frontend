@@ -1,4 +1,4 @@
 # FRT Frontend
 
 
-Frontend application of SIH Project. Backend endpoints are deployed for demo
+Frontend application of SIH Project. Backend endpoints are down for now.
